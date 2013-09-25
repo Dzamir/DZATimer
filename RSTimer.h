@@ -12,7 +12,10 @@
 
 @protocol RSTimerDelegate <NSObject>
 
+// this method is called at each timestep
 -(void) timer:(RSTimer *) timer timeStepForElapsedTime:(NSTimeInterval) elapsedTime;
+
+// it must returns how long is a timestep
 -(NSTimeInterval) timeStepForCallingEventForTimer:(RSTimer *) timer;
 
 @end
@@ -20,16 +23,22 @@
 @interface RSTimer : NSObject
 
 -(id) init;
+// init with a delegate that will be called at each timestep
 -(id) initWithDelegate:(id<RSTimerDelegate>) delegate;
 
+// starts the timer
 -(void) startTimer;
+// pauses the timer
 -(void) pauseTimer;
+// stops the timer and resets the elapsedTime
 -(void) stopTimer;
 
+// elapsed time from the start time
 @property (nonatomic, readonly) NSTimeInterval elapsedTime;
+// delegate object to call at each timestep
 @property (nonatomic, weak) id<RSTimerDelegate> delegate;
 
-// returns up-time returned from the function mach_absolute_time. This value is dependent from the clock and can't be used directly  to show time
+// returns up-time returned from the function mach_absolute_time. This value is dependent from the clock and can't be used directly to show time
 +(uint64_t) getMachAbsoluteTime;
 // returns the difference in nanoseconds bewtween 2 machAbsoluteTimes
 +(uint64_t) nanoSecondsBetweenStartMachAbsoluteTime:(uint64_t) startTime endMachAbsoluteTime:(uint64_t) endTime;
