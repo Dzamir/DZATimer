@@ -67,6 +67,7 @@
 
 -(void) stopTimer;
 {
+    isPaused = YES;
     [timeStepTimer invalidate];
     elapsedTime = absoluteTimeFromLastResume = 0;
 }
