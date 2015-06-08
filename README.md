@@ -15,6 +15,15 @@ You can also init the timer with a delegate, and the timer will send an event af
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+	DZATimer * timer = [[DZATimer alloc] initWithDelegate:nil];
+	[timer startTimer];
+	sleep(1);
+	[timer pauseTimer];
+	sleep(1);
+	[timer startTimer];
+	sleep(1);
+	[timer stopTimer];
+
 ## Requirements
 
 ## Installation

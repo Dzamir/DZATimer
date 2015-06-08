@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "DZATimer"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "A small timer class."
   s.description      = <<-DESC
 The timer continues to track the elapsed time even when the application is in background.
@@ -31,7 +31,4 @@ You can also init the timer with a delegate, and the timer will send an event af
     'DZATimer' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
