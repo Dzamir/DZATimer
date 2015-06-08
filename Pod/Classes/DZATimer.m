@@ -1,15 +1,14 @@
 //
-//  RSTimerUtils.m
-//  ReturnUtils
+//  DZATimer.m
 //
 //  Created by Davide Di Stefano on 25/03/13.
 //  Copyright (c) 2013 ReturnService. All rights reserved.
 //
 
-#import "RSTimer.h"
+#import "DZATimer.h"
 #include <mach/mach_time.h>
 
-@interface RSTimer()
+@interface DZATimer()
 {
     uint64_t absoluteTimeFromLastResume;
     NSTimeInterval elapsedTime;
@@ -19,7 +18,7 @@
 
 @end
 
-@implementation RSTimer
+@implementation DZATimer
 
 - (id)init
 {
@@ -33,7 +32,7 @@
     return self;
 }
 
--(id) initWithDelegate:(id<RSTimerDelegate>) delegate;
+-(id) initWithDelegate:(id<DZATimerDelegate>) delegate;
 {
     self = [super init];
     if (self) {
@@ -48,7 +47,7 @@
 -(void) startTimer;
 {
     isPaused = NO;
-    absoluteTimeFromLastResume = [RSTimer getMachAbsoluteTime];
+    absoluteTimeFromLastResume = [DZATimer getMachAbsoluteTime];
     if ([self.delegate respondsToSelector:@selector(timeStepForCallingEventForTimer:)])
     {
         NSTimeInterval timeStep = [self.delegate timeStepForCallingEventForTimer:self];
@@ -76,8 +75,8 @@
 {
     if (isPaused)
         return elapsedTime;
-    uint64_t nowTime = [RSTimer getMachAbsoluteTime];
-    uint64_t timeDifference = [RSTimer nanoSecondsBetweenStartMachAbsoluteTime:absoluteTimeFromLastResume endMachAbsoluteTime:nowTime];
+    uint64_t nowTime = [DZATimer getMachAbsoluteTime];
+    uint64_t timeDifference = [DZATimer nanoSecondsBetweenStartMachAbsoluteTime:absoluteTimeFromLastResume endMachAbsoluteTime:nowTime];
     uint64_t totalTimeElapsed = timeDifference + elapsedTime;
     NSTimeInterval currElapsedTime = ((double)totalTimeElapsed / 1000000);
     currElapsedTime /= 1000.0f;
@@ -111,7 +110,7 @@
     
     // Convert to nanoseconds.
     
-    // If this is the first time we've run, get the timebase.
+    // If this is the fiDZAt time we've run, get the timebase.
     // We can use denom == 0 to indicate that sTimebaseInfo is
     // uninitialised because it makes no sense to have a zero
     // denominator is a fraction.

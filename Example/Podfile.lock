@@ -1,0 +1,20 @@
+PODS:
+  - DZATimer (0.1.0)
+  - Expecta (1.0.0)
+  - Specta (1.0.1)
+
+DEPENDENCIES:
+  - DZATimer (from `../`)
+  - Expecta
+  - Specta
+
+EXTERNAL SOURCES:
+  DZATimer:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DZATimer: 54d33ba57150f367c0c1843657bea54d1670eb5e
+  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  Specta: 097be314a75de103703a3bf9a529dc1a398509d7
+
+COCOAPODS: 0.37.1

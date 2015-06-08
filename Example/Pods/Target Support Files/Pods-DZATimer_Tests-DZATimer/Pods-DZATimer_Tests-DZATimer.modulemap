@@ -1,0 +1,6 @@
+framework module DZATimer {
+  umbrella header "Pods-DZATimer_Tests-DZATimer-umbrella.h"
+
+  export *
+  module * { export * }
+}
