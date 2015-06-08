@@ -71,6 +71,11 @@
     elapsedTime = absoluteTimeFromLastResume = 0;
 }
 
+-(BOOL) isPlaying
+{
+    return !isPaused;
+}
+
 -(NSTimeInterval) elapsedTime
 {
     if (isPaused)
