@@ -64,11 +64,13 @@
     timeStepTimer = nil;
 }
 
--(void) stopTimer;
+-(NSTimeInterval) stopTimer;
 {
+    NSTimeInterval elapsedTimeAtStop = self.elapsedTime;
     isPaused = YES;
     [timeStepTimer invalidate];
     elapsedTime = absoluteTimeFromLastResume = 0;
+    return elapsedTimeAtStop;
 }
 
 -(BOOL) isPlaying

@@ -30,7 +30,7 @@
 // pauses the timer
 -(void) pauseTimer;
 // stops the timer and resets the elapsedTime
--(void) stopTimer;
+-(NSTimeInterval) stopTimer;
 
 // elapsed time from the start time
 @property (nonatomic, readonly) NSTimeInterval elapsedTime;
