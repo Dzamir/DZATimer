@@ -36,6 +36,7 @@
 @property (nonatomic, readonly) NSTimeInterval elapsedTime;
 // delegate object to call at each timestep
 @property (nonatomic, weak) id<DZATimerDelegate> delegate;
+@property (nonatomic, readonly) BOOL isPlaying;
 
 // returns up-time returned from the function mach_absolute_time. This value is dependent from the clock and can't be used directly to show time
 +(uint64_t) getMachAbsoluteTime;

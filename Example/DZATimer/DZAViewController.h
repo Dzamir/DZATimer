@@ -7,7 +7,8 @@
 //
 
 @import UIKit;
+#import <DZATimer/DZATimer.h>
 
-@interface DZAViewController : UIViewController
+@interface DZAViewController : UIViewController <DZATimerDelegate>
 
 @end
