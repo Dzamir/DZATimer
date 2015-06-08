@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "DZATimer"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "A small timer class."
   s.description      = <<-DESC
 The timer continues to track the elapsed time even when the application is in background.
